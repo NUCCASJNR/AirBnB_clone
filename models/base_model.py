@@ -3,9 +3,10 @@
 
 import uuid
 from datetime import datetime
+from models import storage
 
 
-class BaseModel():
+class BaseModel:
     """The BaseModel class that defines all common attributes
             and methods of other classes
     """
@@ -45,6 +46,7 @@ class BaseModel():
             the current datetime"""
 
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values
