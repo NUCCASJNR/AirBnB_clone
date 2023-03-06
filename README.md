@@ -35,4 +35,3 @@ Quit command to exit the program
 (hbnb)
 (hbnb) quit
 ```
-=======
