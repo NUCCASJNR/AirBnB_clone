@@ -1,11 +1,8 @@
 #!/usr/bin/python3
 """This module contains the class BaseModel"""
 
-from datetime import datetime
-"""The datetime module to get the date"""
-
 import uuid
-"""The uuid module thats used to assign a uuid to instance"""
+from datetime import datetime
 
 
 class BaseModel():
@@ -37,7 +34,6 @@ class BaseModel():
             self.id = str(uuid.uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
-
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
