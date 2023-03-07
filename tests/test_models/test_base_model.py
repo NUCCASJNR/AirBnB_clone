@@ -113,7 +113,6 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         b1 = BaseModel()
         self.assertIn("[BaseModel]", b1.__str__())
 
-
     def test_to_dict_name(self):
         b = BaseModel()
         b.name = "My dict"
@@ -141,5 +140,6 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         d = b.to_dict()
         self.assertEqual(d["updated_at"], b.updated_at.isoformat())
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
