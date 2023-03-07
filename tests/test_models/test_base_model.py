@@ -34,6 +34,9 @@ class TestBaseModel_Object_instance(unittest.TestCase):
     def test_object_instance_creation_time(self):
         self.assertNotEqual(datetime.now(), BaseModel().created_at)
 
+    def test_object_instance_updated_time(self):
+        self.assertNotEqual(datetime.now(), BaseModel().updated_at)
+
     def test_object_instance_sameday_creation(self):
         self.assertEqual(date.today().strftime("%d/%m/%Y"),
                          BaseModel().created_at.strftime("%d/%m/%Y"))
@@ -50,10 +53,93 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         b1 = BaseModel()
         self.assertEqual(str, type(b1.id))
 
+    def test_object_ids_list(self):
+        b2 = BaseModel()
+        self.assertNotEqual(list,  type(b2.id))
+
+    def test_object_ids_tuple(self):
+        b1 = BaseModel()
+        self.assertNotEqual(tuple, type(b1.id))
+
+    def test_object_ids_bool(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bool,  type(b2.id))
+
+    def test_object_ids_None(self):
+        b2 = BaseModel()
+        self.assertNotEqual(None,  type(b2.id))
+
+    def test_object_ids_float(self):
+        b2 = BaseModel()
+        self.assertNotEqual(float, type(b2.id))
+
+    def test_object_ids_int(self):
+        b1 = BaseModel()
+        self.assertNotEqual(int, type(b1.id))
+
+    def test_object_ids_dict(self):
+        b2 = BaseModel()
+        self.assertNotEqual(dict,  type(b2.id))
+
+    def test_object_ids_complex(self):
+        b2 = BaseModel()
+        self.assertNotEqual(complex, type(b2.id))
+
+    def test_object_ids_set(self):
+        b2 = BaseModel()
+        self.assertNotEqual(set, type(b2.id))
+
+    def test_object_ids_frozenset(self):
+        b2 = BaseModel()
+        self.assertNotEqual(frozenset, type(b2.id))
+
+    def test_object_ids_range(self):
+        b2 = BaseModel()
+        self.assertNotEqual(range, type(b2.id))
+
+    def test_object_ids_bytes(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bytes, type(b2.id))
+
+    def test_object_ids_bytearray(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bytearray, type(b2.id))
+
+    def test_object_ids_memoryview(self):
+        b2 = BaseModel()
+        self.assertNotEqual(memoryview, type(b2.id))
+
     def test_object_str_representation(self):
         b1 = BaseModel()
         self.assertIn("[BaseModel]", b1.__str__())
 
 
+    def test_to_dict_name(self):
+        b = BaseModel()
+        b.name = "My dict"
+        d = b.to_dict()
+        self.assertEqual(d["name"], b.name)
 
+    def test_to_dict_age(self):
+        b1 = BaseModel()
+        b1.age = 16
+        d = b1.to_dict()
+        self.assertEqual(d["age"], b1.age)
 
+    def test_to_dict_id(self):
+        b = BaseModel()
+        d = b.to_dict()
+        self.assertEqual(d["id"], b.id)
+
+    def test_to_dict_created_at(self):
+        b = BaseModel()
+        d = b.to_dict()
+        self.assertEqual(d["created_at"], b.created_at.isoformat())
+
+    def test_to_dict_updated_at(self):
+        b = BaseModel()
+        d = b.to_dict()
+        self.assertEqual(d["updated_at"], b.updated_at.isoformat())
+
+    if __name__ == "__main__":
+        unittest.main()
