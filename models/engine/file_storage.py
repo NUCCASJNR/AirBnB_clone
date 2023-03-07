@@ -12,7 +12,7 @@ class FileStorage:
             __file_path: Private class attribute
              string - path to the JSON file
              __objects: private class attribute
-             dictionary - empty but will store all objects 
+             dictionary - empty but will store all objects
         """
 
     __file_path = "file.json"
