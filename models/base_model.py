@@ -3,7 +3,7 @@
 
 import uuid
 from datetime import datetime
-from models import storage
+import models
 
 
 class BaseModel:
@@ -35,7 +35,7 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-            storage.new(self)
+            models.storage.new(self)
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
@@ -47,7 +47,7 @@ class BaseModel:
             the current datetime"""
 
         self.updated_at = datetime.now()
-        storage.save()
+        models.storage.save()
 
     def to_dict(self):
         """returns a dictionary containing all keys/values

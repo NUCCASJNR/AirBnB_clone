@@ -49,6 +49,11 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         b3 = BaseModel(name="Al-Areef", partner="Ayobami")
         self.assertEqual(b3.partner, "Ayobami")
 
+    def test_unique_ids(self):
+        b1 = BaseModel()
+        b2 = BaseModel()
+        self.assertNotEqual(b1.id, b2.id)
+
     def test_object_ids_type(self):
         b1 = BaseModel()
         self.assertEqual(str, type(b1.id))

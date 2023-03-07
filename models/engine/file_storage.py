@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """This module contains the Filetorage class"""
-
 import json
+from models.base_model import BaseModel
 """The json module for serializaion and deserialization"""
 
 
