@@ -53,7 +53,3 @@ class TestBaseModel_Object_instance(unittest.TestCase):
     def test_object_str_representation(self):
         b1 = BaseModel()
         self.assertIn("[BaseModel]", b1.__str__())
-
-
-
-
