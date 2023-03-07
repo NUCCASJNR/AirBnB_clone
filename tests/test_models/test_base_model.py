@@ -50,10 +50,66 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         b1 = BaseModel()
         self.assertEqual(str, type(b1.id))
 
+    def test_object_ids_list(self):
+        b2 = BaseModel()
+        self.assertNotEqual(list,  type(b2.id))
+
+    def test_object_ids_tuple(self):
+        b1 = BaseModel()
+        self.assertNotEqual(tuple, type(b1.id))
+
+    def test_object_ids_bool(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bool,  type(b2.id))
+
+    def test_object_ids_None(self):
+        b2 = BaseModel()
+        self.assertNotEqual(None,  type(b2.id))
+
+    def test_object_ids_float(self):
+        b2 = BaseModel()
+        self.assertNotEqual(float, type(b2.id))
+
+    def test_object_ids_int(self):
+        b1 = BaseModel()
+        self.assertNotEqual(int, type(b1.id))
+
+    def test_object_ids_dict(self):
+        b2 = BaseModel()
+        self.assertNotEqual(dict,  type(b2.id))
+
+    def test_object_ids_complex(self):
+        b2 = BaseModel()
+        self.assertNotEqual(complex, type(b2.id))
+
+    def test_object_ids_set(self):
+        b2 = BaseModel()
+        self.assertNotEqual(set, type(b2.id))
+
+    def test_object_ids_frozenset(self):
+        b2 = BaseModel()
+        self.assertNotEqual(frozenset, type(b2.id))
+
+    def test_object_ids_range(self):
+        b2 = BaseModel()
+        self.assertNotEqual(range, type(b2.id))
+
+    def test_object_ids_bytes(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bytes, type(b2.id))
+
+    def test_object_ids_bytearray(self):
+        b2 = BaseModel()
+        self.assertNotEqual(bytearray, type(b2.id))
+
+    def test_object_ids_memoryview(self):
+        b2 = BaseModel()
+        self.assertNotEqual(memoryview, type(b2.id))
+
     def test_object_str_representation(self):
         b1 = BaseModel()
         self.assertIn("[BaseModel]", b1.__str__())
 
 
-
-
+    if __name__ == "__main__":
+        unittest.main()
