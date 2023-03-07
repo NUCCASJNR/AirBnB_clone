@@ -12,7 +12,7 @@ class FileStorage:
             __file_path: Private class attribute
              string - path to the JSON file
              __objects: private class attribute
-             dictionary - empty but will store all objects 
+             dictionary - empty but will store all objects
         """
 
     __file_path = "file.json"
@@ -21,19 +21,20 @@ class FileStorage:
     def all(self):
         """ returns the dictionary __objects """
 
-        return self.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         """sets in __objects the obj with key <obj class name>.id"""
 
-        key = f"{obj.__class__.__name__}.{self.id}"
+        key = f"{obj.__class__.__name__}.{obj.id}"
         FileStorage.__objects[key] = obj
 
     def save(self):
         """ serializes __objects to the JSON file """
         path = FileStorage.__file_path
 
-        new_obj = {k: v.to_dict() for k, v in FileStorage.__objects.items()}
+        new_obj = {k: FileStorage.__objects[k].to_dict(
+        ) for k in FileStorage.__objects.keys()}
 
         with open(path, "w") as file:
             json.dump(new_obj, file)
@@ -42,7 +43,7 @@ class FileStorage:
         path = FileStorage.__file_path
 
         try:
-            with open(path, mode="r") as file:
+            with open(path) as file:
                 object_json = json.load(file)
                 for obj in object_json.values():
                     class_name = obj['__class__']

@@ -22,6 +22,9 @@ class BaseModel:
                     id: string - assign with an uuid when an instance
                     is created
         """
+        self.id = str(uuid.uuid4())
+        self.created_at = datetime.now()
+        self.updated_at = datetime.now()
 
         if len(kwargs) != 0:
             for key, value in kwargs.items():
@@ -32,9 +35,7 @@ class BaseModel:
                 else:
                     self.__dict__[key] = value
         else:
-            self.id = str(uuid.uuid4())
-            self.created_at = datetime.now()
-            self.updated_at = datetime.now()
+            storage.new(self)
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
@@ -57,17 +58,3 @@ class BaseModel:
         dict_copied["created_at"] = self.created_at.isoformat()
         dict_copied["updated_at"] = self.updated_at.isoformat()
         return dict_copied
-
-
-all_objs = storage.all()
-print("-- Reloaded objects --")
-for obj_id in all_objs.keys():
-    obj = all_objs[obj_id]
-    print(obj)
-
-print("-- Create a new object --")
-my_model = BaseModel()
-my_model.name = "My_First_Model"
-my_model.my_number = 89
-my_model.save()
-print(my_model)

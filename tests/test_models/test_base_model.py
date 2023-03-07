@@ -140,5 +140,6 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         d = b.to_dict()
         self.assertEqual(d["updated_at"], b.updated_at.isoformat())
 
-    if __name__ == "__main__":
-        unittest.main()
+
+if __name__ == "__main__":
+    unittest.main()
