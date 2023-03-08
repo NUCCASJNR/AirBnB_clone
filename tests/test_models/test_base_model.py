@@ -5,7 +5,7 @@
 from datetime import datetime, date
 import unittest
 from models.base_model import BaseModel
-
+from time import sleep
 
 class TestBaseModel_Object_instance(unittest.TestCase):
     """ Test Base Model Object Instance
@@ -144,6 +144,34 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         b = BaseModel()
         d = b.to_dict()
         self.assertEqual(d["updated_at"], b.updated_at.isoformat())
+
+    
+    def test_id_is_public_str(self):
+        self.assertEqual(str, type(BaseModel().id))
+
+    def test_created_at_type(self):
+        self.assertEqual(datetime, type(BaseModel().created_at))
+
+    def test_updated_at_type(self):
+        self.assertEqual(datetime, type(BaseModel().updated_at))
+
+    def test_uniq_ids(self):
+        obj1 = BaseModel()
+        obj2 = BaseModel()
+        self.assertNotEqual(obj1.id, obj2.id)
+
+    def test_diff_created_at(self):
+        o1 = BaseModel()
+        sleep(0.05)
+        o2 = BaseModel()
+        self.assertLess(o1.created_at, o2.created_at)
+
+    def test_diff_updated_at(self):
+        o1 = BaseModel()
+        sleep(0.05)
+        o2 = BaseModel()
+        self.assertLess(o1.updated_at, o2.updated_at)
+
 
 
 if __name__ == "__main__":
