@@ -72,6 +72,24 @@ class HBNBCommand(cmd.Cmd):
                 del storage.all()[key]
                 storage.save()
 
+    def do_all(self, arg):
+        """ Prints all string representation of all instances based or
+        not on the class name. Ex: $ all BaseModel or $ all.
+        The printed result must be a list of strings (like the example below)
+        If the class name doesn’t exist, print ** class doesn't exist **
+        (ex: $ all MyModel)
+        """
+
+        tokens = arg.split()
+        if len(tokens) == 0:
+            print([str(value) for value in storage.all().values()])
+        elif tokens[0] not in HBNBCommand.CLASSNAMES:
+            print("** class doesn't exist **")
+        else:
+            temp = [str(v) for k, v in storage.all().items()
+                    if k.startswith(tokens[0])]
+            print(temp)
+
     def do_EOF(self, arg):
         """Handles EOF"""
 
