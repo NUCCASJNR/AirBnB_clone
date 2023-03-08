@@ -7,7 +7,15 @@ import cmd
 import os
 
 
-def tokenize(arg):
+def tokenize(arg: str) -> list:
+    """ Splits a string into tokens delimited by space
+
+    Args:
+        arg (string): strings to be splitted
+
+    Returns:
+        list: list of strings
+    """
     token = arg.split(" ")
     return token
 
@@ -18,12 +26,12 @@ class HBNBCommand(cmd.Cmd):
     prompt = "(hbnb) "
     CLASSNAMES = ["BaseModel"]
 
-    def do_quit(self, arg):
+    def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
 
         return True
 
-    def do_create(self, arg):
+    def do_create(self, arg: str) -> None:
         """Creates a new instance of BaseModel, saves it
         (to the JSON file) and prints the id
         """
@@ -37,14 +45,14 @@ class HBNBCommand(cmd.Cmd):
             print(eval(tokens[0])().id)
             storage.save()
 
-    def do_clear(self, args):
+    def do_clear(self, args: str) -> None:
         """Clear the screen"""
         if os.name == 'nt':
             os.system('cls')
         else:
             os.system('clear')
 
-    def do_show(self, arg):
+    def do_show(self, arg: str) -> None:
         """ Prints the string representation of an instance
         based on the class name and id
         """
@@ -63,7 +71,7 @@ class HBNBCommand(cmd.Cmd):
             else:
                 print(storage.all()[key])
 
-    def do_destroy(self, arg):
+    def do_destroy(self, arg: str) -> None:
         """: Deletes an instance based on the class name and id
         (save the change into the JSON file)
         """
@@ -83,7 +91,7 @@ class HBNBCommand(cmd.Cmd):
                 del storage.all()[key]
                 storage.save()
 
-    def do_all(self, arg):
+    def do_all(self, arg: str) -> None:
         """ Prints all string representation of all instances based or
         not on the class name. Ex: $ all BaseModel or $ all.
         The printed result must be a list of strings (like the example below)
@@ -101,7 +109,12 @@ class HBNBCommand(cmd.Cmd):
                     if k.startswith(tokens[0])]
             print(temp)
 
-    def do_update(self, arg):
+    def do_update(self, arg: str) -> None:
+        """ Updates the class object
+
+        Args:
+            arg (object): class object
+        """
         tokens = tokenize(arg)
         object_json = storage.all()
         if arg == "":
