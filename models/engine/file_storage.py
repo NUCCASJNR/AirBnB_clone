@@ -2,6 +2,7 @@
 """This module contains the Filetorage class"""
 import json
 from models.base_model import BaseModel
+from models.user import User
 """The json module for serializaion and deserialization"""
 
 
