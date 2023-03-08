@@ -90,6 +90,22 @@ class HBNBCommand(cmd.Cmd):
                     if k.startswith(tokens[0])]
             print(temp)
 
+    def do_update(self, arg):
+        """ Updates an instance based on the class name and id
+        by adding or updating attribute (save the change into
+        the JSON file). Ex: $ update BaseModel 1234-1234-1234
+        email "aibnb@mail.com".
+        """
+
+        tokens = arg.split()
+        if arg == "":
+            print("** class name missing **")
+        elif tokens[0] not in HBNBCommand.CLASSNAMES:
+            print("* class doesn't exist **")
+        elif len(tokens) < 2:
+            print("** instance id missing **")
+
+
     def do_EOF(self, arg):
         """Handles EOF"""
 
