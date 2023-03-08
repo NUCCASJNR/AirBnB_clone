@@ -3,6 +3,11 @@
 
 from models.base_model import BaseModel
 from models.user import User
+from models.place import Place
+from models.state import State
+from models.city import City
+from models.amenity import Amenity
+from models.review import Review
 from models import storage
 import cmd
 import os
@@ -25,7 +30,15 @@ class HBNBCommand(cmd.Cmd):
     """The class HBNB that builds a console"""
 
     prompt = "(hbnb) "
-    CLASSNAMES = ["BaseModel"]
+    CLASSNAMES = {
+            "BaseModel",
+            "User",
+            "State",
+            "City",
+            "Place",
+            "Amenity",
+            "Review"
+        }
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
