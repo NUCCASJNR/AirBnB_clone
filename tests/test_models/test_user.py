@@ -85,11 +85,11 @@ class TestUser_Has_attr_basemodel(unittest.TestCase):
 
     def test_user_has_created_at_attr(self):
         u1 = User()
-        self.assertTrue(u1.id)
+        self.assertTrue(u1.created_at)
 
     def test_user_has_updated_at_attr(self):
         u1 = User()
-        self.assertTrue(u1.id)
+        self.assertTrue(u1.updated_at)
 
     def test_user_can_take_kwargs(self):
         u2 = User(name="Al-Areef")

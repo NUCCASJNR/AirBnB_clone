@@ -168,6 +168,17 @@ class HBNBCommand(cmd.Cmd):
                     obj.__dict__[k] = v
         storage.save()
 
+    def do_count(self, arg):
+        tokens = tokenize(arg)
+        # set counter
+        count = 0
+        # get all object keys
+        object_keys = storage.all().keys()
+        for key in object_keys:
+            if tokens[0] in key:
+                count += 1
+        print(count)
+
     def do_EOF(self, arg):
         """Handles EOF"""
 
