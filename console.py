@@ -40,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
+    intro = 'Welcome to my console'
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
@@ -211,7 +212,7 @@ class HBNBCommand(cmd.Cmd):
         for key in object_keys:
             if tokens[0] in key:
                 count += 1
-        print(count)
+       # print(count)
 
     def do_EOF(self, arg):
         """Handles EOF"""

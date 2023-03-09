@@ -67,6 +67,18 @@ class TestReview_Has_attr_basemodel(unittest.TestCase):
         r1 = Review()
         self.assertTrue(r1.updated_at)
 
+    def test_review_has___str__(self):
+        r1 =Review()
+        self.assertTrue(r1.__str__)
+
+    def test_review_has_save_attr(self):
+        r2 = Review()
+        self.assertTrue(r2.save)
+
+    def test_review_has_to_dict_attr(self):
+        r1 = Review()
+        self.assertTrue(r1.to_dict)
+
     def test_review_can_take_kwargs(self):
         r2 = Review(name="Al-Areef")
         self.assertEqual(r2.name, "Al-Areef")
