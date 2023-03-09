@@ -7,6 +7,7 @@ import unittest
 from models.base_model import BaseModel
 from time import sleep
 
+
 class TestBaseModel_Object_instance(unittest.TestCase):
     """ Test Base Model Object Instance
 
@@ -145,7 +146,6 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         d = b.to_dict()
         self.assertEqual(d["updated_at"], b.updated_at.isoformat())
 
-    
     def test_id_is_public_str(self):
         self.assertEqual(str, type(BaseModel().id))
 
@@ -171,7 +171,6 @@ class TestBaseModel_Object_instance(unittest.TestCase):
         sleep(0.05)
         o2 = BaseModel()
         self.assertLess(o1.updated_at, o2.updated_at)
-
 
 
 if __name__ == "__main__":
