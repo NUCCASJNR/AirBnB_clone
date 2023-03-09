@@ -11,6 +11,7 @@ from models.review import Review
 from models import storage
 import cmd
 import os
+import re
 
 
 def tokenize(arg: str) -> list:
@@ -22,7 +23,7 @@ def tokenize(arg: str) -> list:
     Returns:
         list: list of strings
     """
-    token = arg.split(" ")
+    token = re.split(r"[ .]", arg)
     return token
 
 
@@ -31,14 +32,14 @@ class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
     CLASSNAMES = {
-            "BaseModel",
-            "User",
-            "State",
-            "City",
-            "Place",
-            "Amenity",
-            "Review"
-        }
+        "BaseModel",
+        "User",
+        "State",
+        "City",
+        "Place",
+        "Amenity",
+        "Review"
+    }
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
@@ -114,7 +115,7 @@ class HBNBCommand(cmd.Cmd):
         """
 
         tokens = tokenize(arg)
-        if len(tokens) == 0:
+        if arg == "":
             print([str(value) for value in storage.all().values()])
         elif tokens[0] not in HBNBCommand.CLASSNAMES:
             print("** class doesn't exist **")
