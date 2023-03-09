@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains the console.py module"""
+"""This module contains the console.py modul"""
 
 from models.base_model import BaseModel
 from models.user import User
