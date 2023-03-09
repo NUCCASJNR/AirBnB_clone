@@ -41,6 +41,14 @@ class TestReview_Object_instance(unittest.TestCase):
         r1 = Review()
         self.assertEqual(type(r1.id), str)
 
+    def test_review_place_id_type(self):
+        r1 = Review()
+        self.assertEqual(type(r1.place_id), str)
+
+    def test_review_user_id_type(self):
+        r1 = Review()
+        self.assertEqual(type(r1.user_id), str)
+
     def test_review_object_creation_time(self):
         r1 = Review()
         r2 = Review()

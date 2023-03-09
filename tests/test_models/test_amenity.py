@@ -48,7 +48,6 @@ class TestAmenity_object_instance(unittest.TestCase):
         self.assertEqual(a1.name, "")
 
 
-
 class TestAmenity_Has_attr_basemodel(unittest.TestCase):
     """
         Test Amenity for basemodel attributes
