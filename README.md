@@ -40,9 +40,9 @@ Quit command to exit the program
 
 ## Al-Areef
 
-- Al-Areef:  [NUCCASJNR](https://github.com/NUCCASJNR)
-- Al-Areef:  [codewithalaref](https://twitter.com/codewithalareef)
+- Github:  [NUCCASJNR](https://github.com/NUCCASJNR)
+- Twitter:  [codewithalaref](https://twitter.com/codewithalareef)
 
 ## Ayobami
 
-- Ayobami: [Ayobami](https://github.com/Ayobami6)
+- Github: [Ayobami](https://github.com/Ayobami6)
