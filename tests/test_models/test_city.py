@@ -70,6 +70,14 @@ class TestCity_Has_Attr_basemodel(unittest.TestCase):
         c1 = City()
         self.assertTrue(c1.updated_at)
 
+    def test_city_has___str__attr(self):
+        c1 = City()
+        self.assertTrue(c1.__str__)
+
+    def test_city_has_to_dict_attr(self):
+        c1 = City()
+        self.assertTrue(c1.to_dict)
+
 
 if __name__ == "__main__":
    unittest.main()
