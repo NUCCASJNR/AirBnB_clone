@@ -78,6 +78,10 @@ class TestCity_Has_Attr_basemodel(unittest.TestCase):
         c1 = City()
         self.assertTrue(c1.to_dict)
 
+    def test_City_kwargs(self):
+        c1 = City(name="idan")
+        self.assertEqual(c1.name, "idan")
+
 
 if __name__ == "__main__":
    unittest.main()
