@@ -22,6 +22,10 @@ class TestAmenity_object_instance(unittest.TestCase):
         a1 = Amenity()
         self.assertIsInstance(a1, BaseModel)
 
+    def test_Amenity_is_instabce(self):
+        a1 = Amenity()
+        self.assertIsInstance(a1, Amenity)
+
     def test_Amenity_two_ids(self):
         a1 = Amenity()
         a2 = Amenity()

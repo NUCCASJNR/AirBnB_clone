@@ -44,6 +44,10 @@ class TestState_Object_instance(unittest.TestCase):
         s1.name = "Lagos"
         self.assertEqual(s1.name, "Lagos")
 
+    def test_state_name(self):
+        s1 = State()
+        self.assertEqual(s1.name, "")
+
 
 class TestState_Has_attr_basemodel(unittest.TestCase):
 
