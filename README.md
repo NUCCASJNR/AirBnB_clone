@@ -41,7 +41,7 @@ Quit command to exit the program
 ## Al-Areef
 
 - Github:  [NUCCASJNR](https://github.com/NUCCASJNR)
-- Twitter:  [codewithalaref](https://twitter.com/codewithalareef)
+- Twitter:  [codewithalareef](https://twitter.com/codewithalareef)
 
 ## Ayobami
 
