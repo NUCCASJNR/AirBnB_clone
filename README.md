@@ -38,8 +38,8 @@ Quit command to exit the program
 
 ## CONTRIBUTORS
 
-Al-Areef:  [GITHUB](https://github.com/NUCCASJNR)
-Al-Areef:  [TWITTER](https://twitter.com/codewithalareef)
+- Al-Areef:  [NUCCASJNR](https://github.com/NUCCASJNR)
+- Al-Areef:  [codewithalaref](https://twitter.com/codewithalareef)
 
-Ayobami: [GITHUB](https://github.com/Ayobami6)
+Ayobami: [Ayobami](https://github.com/Ayobami6)
 #Ayobami: [TWITTER](https://
