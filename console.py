@@ -40,7 +40,7 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
-    intro = 'Welcome to my console'
+   # intro = 'Welcome to my console'
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
