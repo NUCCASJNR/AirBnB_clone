@@ -1,5 +1,4 @@
-#!/usr/bin/python3
-"""This module contains the console.py module"""
+s module contains the console.py module"""
 
 from models.base_model import BaseModel
 from models.user import User
@@ -38,6 +37,7 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
+    intro = 'Welcome to my console'
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
@@ -59,25 +59,25 @@ class HBNBCommand(cmd.Cmd):
             if key == tokens[1]:
                 # for if args is parentheses eg("something")
                 if tokens[2] != "":
-                    print(tokens)
+                    # print(tokens)
                     striped_arg = tokens[2].replace('"', '')
                     args = f"{tokens[0]} {striped_arg}"
                     return func_dict[tokens[1]](args)
                 elif len(tokens) == 6:
                     # for update version 1
-                    print(tokens)
+                    # print(tokens)
                     striped1_arg = tokens[2].replace('"', '')
                     striped2_arg = tokens[3].replace('"', '')
                     striped3_arg = tokens[4].replace('"', '')
-                    args = f"{tokens[0]} {striped1_arg} {striped2_arg}" \
-                        "{striped3_arg}"
+                    args = f"{tokens[0]} {striped1_arg} {striped2_arg} \
+                    {striped3_arg}"
                     return func_dict[tokens[1]](args)
 
                 else:
-                    print(tokens)
+                    # print(tokens)
                     return func_dict[tokens[1]](tokens[0])
 
-        print(tokens)
+        # print(tokens)
 
         print("*** Unknown syntax: {}".format(arg))
         return False
