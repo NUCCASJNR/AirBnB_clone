@@ -77,10 +77,10 @@ class HBNBCommand(cmd.Cmd):
                     return func_dict[tokens[1]](args)
 
                 else:
-                    print(tokens)
+                    # print(tokens)
                     return func_dict[tokens[1]](tokens[0])
 
-        print(tokens)
+        # print(tokens)
 
         print("*** Unknown syntax: {}".format(arg))
         return False
@@ -172,31 +172,31 @@ class HBNBCommand(cmd.Cmd):
         tokens = tokenize(arg)
         object_json = storage.all()
         if arg == "":
-            print(tokens)
+            # print(tokens)
             print("** class name missing **")
             return False
         elif tokens[0] not in HBNBCommand.CLASSNAMES:
-            print(tokens)
+            # print(tokens)
             print("* class doesn't exist **")
             return False
         elif len(tokens) < 2:
-            print(tokens)
+            # print(tokens)
             print("** instance id missing **")
             return False
 
         elif f"{tokens[0]}.{tokens[1]}" not in object_json.keys():
-            print(tokens)
+            # print(tokens)
             print("** no instance found **")
             return False
         elif len(tokens) < 3:
-            print(tokens)
+            # print(tokens)
             print("** attribute name missing **")
             return False
         elif len(tokens) == 3:
             try:
                 type(eval(tokens[2])) != dict
             except NameError:
-                print(tokens)
+                # print(tokens)
                 print("** value missing **")
                 return False
 
