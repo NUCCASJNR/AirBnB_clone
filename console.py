@@ -148,7 +148,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints all string representation of all instances based or
         not on the class name. Ex: $ all BaseModel or $ all.
         The printed result must be a list of strings (like the example below)
-        If the class name doesn’t exist, print ** class doesn't exist **
+        If the class name doesn’t exist, print class doesn't exist **
         (ex: $ all MyModel)
         """
 
