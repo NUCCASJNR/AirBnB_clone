@@ -1,5 +1,7 @@
 ## Airbnb Clone
 
+![Airbnb logo](https://www.pngitem.com/pimgs/m/132-1322125_transparent-background-airbnb-logo-hd-png-download.png)
+
 AirBnB clone is a team of two project to clone [AirBnB](https://www.airbnb.com) website
 
 The Project will start with console interpreter to perform some operations that include;
