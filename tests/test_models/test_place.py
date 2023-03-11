@@ -36,6 +36,7 @@ class TestPlace_object_instance(unittest.TestCase):
     def test_Place_city_default_id(self):
         p1 = Place()
         self.assertEqual(p1.city_id, "")
+        self.assertIn("city_id", dir(p1))
 
     def test_place_user_id_default_id(self):
         p1 = Place()
@@ -101,7 +102,17 @@ class TestPlace_Has_attr_BaseModel(unittest.TestCase):
         p1 = Place()
         self.assertTrue(p1.id)
 
+    def test_Place_has_created_at_attr(self):
+        p1 = Place()
+        self.assertTrue(p1.created_at)
 
+    def test_place_has_updated_at_attr(self):
+        p1 = Place()
+        self.assertTrue(p1.updated_at)
+        
+    def test_place_has__str__attr(self):
+        p1 = Place()
+        self.assertTrue(p1.__str__)
 
 
 
