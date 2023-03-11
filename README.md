@@ -35,3 +35,14 @@ Quit command to exit the program
 (hbnb)
 (hbnb) quit
 ```
+
+## CONTRIBUTORS
+
+## Al-Areef
+
+- Github:  [NUCCASJNR](https://github.com/NUCCASJNR)
+- Twitter:  [codewithalareef](https://twitter.com/codewithalareef)
+
+## Ayobami
+
+- Github: [Ayobami](https://github.com/Ayobami6)
