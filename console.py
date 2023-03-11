@@ -222,6 +222,8 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_count(self, arg):
+        """counts"""
+
         tokens = tokenize(arg)
         # set counter
         count = 0
