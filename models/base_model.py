@@ -34,6 +34,8 @@ class BaseModel:
                     self.__dict__[key] = datetime.fromisoformat(value)
                 else:
                     self.__dict__[key] = value
+        else:
+            models.storage.new(self)
 
     def __str__(self):
         """Return the print/str representation of the BaseModel instance."""
@@ -45,7 +47,7 @@ class BaseModel:
             the current datetime"""
 
         self.updated_at = datetime.now()
-        models.storage.new(self)
+        # models.storage.new(self)
         models.storage.save()
 
     def to_dict(self):
