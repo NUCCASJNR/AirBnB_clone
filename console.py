@@ -16,12 +16,14 @@ import re
 
 def tokenize(arg: str) -> list:
     """ Splits a string into tokens delimited by space
+
     Args:
         arg (string): strings to be splitted
+
     Returns:
         list: list of strings
     """
-    token = re.split(r"[ .()]", arg)
+    token = re.split(r"[ .(),]", arg)
     return token
 
 
@@ -38,6 +40,7 @@ class HBNBCommand(cmd.Cmd):
         "Amenity",
         "Review"
     }
+    intro = 'Welcome to my console'
 
     def do_quit(self, arg: str) -> bool:
         """Quit command to exit the program"""
@@ -58,26 +61,26 @@ class HBNBCommand(cmd.Cmd):
             # checking for commands to call
             if key == tokens[1]:
                 # for if args is parentheses eg("something")
-                if tokens[2] != "":
-                    print(tokens)
+                if tokens[2] != "" and len(tokens) < 6:
+                    # print(tokens)
                     striped_arg = tokens[2].replace('"', '')
                     args = f"{tokens[0]} {striped_arg}"
                     return func_dict[tokens[1]](args)
-                elif len(tokens) == 6:
+                elif len(tokens) > 6:
                     # for update version 1
-                    print(tokens)
-                    striped1_arg = tokens[2].replace('"', '')
-                    striped2_arg = tokens[3].replace('"', '')
-                    striped3_arg = tokens[4].replace('"', '')
-                    args = f"{tokens[0]} {striped1_arg} {striped2_arg}" \
-                        "{striped3_arg}"
+                    # print(tokens)
+                    arg1 = tokens[2].replace('"', '')
+                    arg2 = tokens[4].replace('"', '')
+                    arg3 = tokens[6].replace('"', '')
+                    args = f"{tokens[0]} {arg1} {arg2} {arg3}"
+                    # print(args)
                     return func_dict[tokens[1]](args)
 
                 else:
-                    print(tokens)
+                    # print(tokens)
                     return func_dict[tokens[1]](tokens[0])
 
-        print(tokens)
+        # print(tokens)
 
         print("*** Unknown syntax: {}".format(arg))
         return False
@@ -162,24 +165,42 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg: str) -> None:
         """ Updates the class object
+
         Args:
             arg (object): class object
         """
         tokens = tokenize(arg)
         object_json = storage.all()
         if arg == "":
+            # print(tokens)
             print("** class name missing **")
+            return False
         elif tokens[0] not in HBNBCommand.CLASSNAMES:
+            # print(tokens)
             print("* class doesn't exist **")
+            return False
         elif len(tokens) < 2:
+            # print(tokens)
             print("** instance id missing **")
+            return False
 
         elif f"{tokens[0]}.{tokens[1]}" not in object_json.keys():
+            # print(tokens)
             print("** no instance found **")
+            return False
         elif len(tokens) < 3:
+            # print(tokens)
             print("** attribute name missing **")
+            return False
+        elif len(tokens) == 3:
+            try:
+                type(eval(tokens[2])) != dict
+            except NameError:
+                # print(tokens)
+                print("** value missing **")
+                return False
 
-        if len(tokens) == 4:
+        if len(tokens) > 3:
             obj = object_json[f"{tokens[0]}.{tokens[1]}"]
             if tokens[2] in obj.__class__.__dict__.keys():
                 # get the attribute value type for typecast
@@ -189,7 +210,7 @@ class HBNBCommand(cmd.Cmd):
                 obj.__dict__[str(tokens[2])] = tokens[3]
 
         elif type(eval(tokens[2])) == dict:
-            obj = objdict[f"{tokens[0]}.{tokens[1]}"]
+            obj = object_json[f"{tokens[0]}.{tokens[1]}"]
             for k, v in eval(tokens[2]).items():
                 if (k in obj.__class__.__dict__.keys() and
                         type(obj.__class__.__dict__[k]) in [str, int, float]):
