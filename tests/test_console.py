@@ -35,12 +35,32 @@ class TestHBNBCommand(unittest.TestCase):
         s = 'Creates a new instance\n'
         self.assertEqual(s, f.getvalue())
 
-    def test_help_default(self):
+    def test_help_clear(self):
         """Tests default"""
-
         with patch('sys.stdout', new=StringIO()) as f:
-            HBNBCommand().onecmd("help default")
-            s = '*** No help on default\n'
+            HBNBCommand().onecmd("help clear")
+            s = 'Clear the screen\n'
+            self.assertEqual(s, f.getvalue())
+
+    def test_help_show(self):
+        """Tests show"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help show")
+            s = 'prints the string representation of an instance\n'
+            self.assertEqual(s, f.getvalue())
+
+    def test_help_destroy(self):
+        """Tests destroy"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help destroy")
+            s = 'Deletes an instance based on the class name and id\n'
+            self.assertEqual(s, f.getvalue())
+
+    def test_help_all(self):
+        """Tests All"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help all")
+            s = 'Prints all string representation of all instances\n'
             self.assertEqual(s, f.getvalue())
 
 

@@ -106,8 +106,7 @@ class HBNBCommand(cmd.Cmd):
             os.system('clear')
 
     def do_show(self, arg: str) -> None:
-        """ Prints the string representation of an instance
-        based on the class name"""
+        """prints the string representation of an instance"""
 
         tokens = tokenize(arg)
         if arg == "":
@@ -124,8 +123,7 @@ class HBNBCommand(cmd.Cmd):
                 print(storage.all()[key])
 
     def do_destroy(self, arg: str) -> None:
-        """Deletes an instance based on the class name and id
-        save the change into the JSON file"""
+        """Deletes an instance based on the class name and id"""
 
         tokens = tokenize(arg)
         if arg == "":
@@ -143,8 +141,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
 
     def do_all(self, arg: str) -> None:
-        """ Prints all string representation of all instances based or
-        not on the class name"""
+        """Prints all string representation of all instances"""
 
         tokens = tokenize(arg)
         if arg == "":
