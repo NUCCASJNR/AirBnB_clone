@@ -193,7 +193,7 @@ class HBNBCommand(cmd.Cmd):
                 val_type = type(obj.__class__.__dict__[tokens[2]])
                 obj.__dict__[tokens[2]] = val_type(tokens[3])
             else:
-                obj.__dict__[str(tokens[2])] = tokens[3]
+                obj.__dict__[tokens[2]] = tokens[3]
 
         elif type(eval(tokens[2])) == dict:
             obj = object_json[f"{tokens[0]}.{tokens[1]}"]
