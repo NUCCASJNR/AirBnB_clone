@@ -70,6 +70,13 @@ class TestHBNBCommand(unittest.TestCase):
             s = ' Updates the class\n'
             self.assertEqual(s, f.getvalue())
 
+    def test_help_count(self):
+        """Tests count"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help count")
+            s = 'counts\n'
+            self.assertEqual(s, f.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
