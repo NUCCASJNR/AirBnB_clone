@@ -63,6 +63,13 @@ class TestHBNBCommand(unittest.TestCase):
             s = 'Prints all string representation of all instances\n'
             self.assertEqual(s, f.getvalue())
 
+    def test_help_update(self):
+        """Tests Update"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help update")
+            s = ' Updates the class\n'
+            self.assertEqual(s, f.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
