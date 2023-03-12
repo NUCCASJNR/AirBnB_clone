@@ -23,7 +23,6 @@ class TestHBNBCommand(unittest.TestCase):
 
     def test_help_quit(self):
         """Tests the help command."""
-        
         with patch('sys.stdout', new=StringIO()) as f:
             HBNBCommand().onecmd("help quit")
         s = 'Quit command to exit the program\n'
@@ -31,9 +30,8 @@ class TestHBNBCommand(unittest.TestCase):
 
     def test_help_create(self):
         """Tests the create command"""
-        
         with patch('sys.stdout', new=StringIO()) as f:
-                HBNBCommand().onecmd("help create")
+            HBNBCommand().onecmd("help create")
         s = 'Creates a new instance\n'
         self.assertEqual(s, f.getvalue())
 
@@ -45,5 +43,6 @@ class TestHBNBCommand(unittest.TestCase):
             s = '*** No help on default\n'
             self.assertEqual(s, f.getvalue())
 
+
 if __name__ == "__main__":
-	unittest.main()
+    unittest.main()
