@@ -46,6 +46,14 @@ run the following command to start
 git clone https://github.com/NUCCASJNR/AirBnB_clone.git
 ```
 
+```bash
+cd AirBnB_clone
+```
+
+```bash
+python3 -m unittest discover tests
+```
+
 
 ## DIRECTORIES
 
