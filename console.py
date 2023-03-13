@@ -93,7 +93,7 @@ class HBNBCommand(cmd.Cmd):
         if arg == "":
             print("** class name missing **")
         elif tokens[0] not in HBNBCommand.CLASSNAMES:
-            print("** class doesn't exit **")
+            print("** class doesn't exist **")
         else:
             print(eval(tokens[0])().id)
             storage.save()
