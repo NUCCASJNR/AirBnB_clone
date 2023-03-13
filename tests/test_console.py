@@ -77,6 +77,13 @@ class TestHBNBCommand(unittest.TestCase):
             s = 'counts\n'
             self.assertEqual(s, f.getvalue())
 
+    def test_help_EOF(self):
+        """End of line"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help EOF")
+            s = 'Handles EOF\n'
+            self.assertEqual(s, f.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
