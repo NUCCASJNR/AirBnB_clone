@@ -62,7 +62,7 @@ class HBNBCommand(cmd.Cmd):
             # checking for commands to call
             if key == tokens[1]:
                 # for if args is parentheses eg("something")
-                if tokens[2] != "":
+                if tokens[2] != "" and len(tokens) < 6:
                     # print(tokens)
                     striped_arg = tokens[2].replace('"', '')
                     args = f"{tokens[0]} {striped_arg}"
