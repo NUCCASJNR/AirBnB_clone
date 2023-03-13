@@ -66,7 +66,6 @@ class HBNBCommand(cmd.Cmd):
                     # print(tokens)
                     striped_arg = tokens[2].replace('"', '')
                     args = f"{tokens[0]} {striped_arg}"
-                   # args = f"{tokens[0]}"
                     return func_dict[tokens[1]](args)
                 elif len(tokens) > 6:
                     # for update version 1
