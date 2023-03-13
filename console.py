@@ -163,7 +163,7 @@ class HBNBCommand(cmd.Cmd):
             return False
         elif tokens[0] not in HBNBCommand.CLASSNAMES:
             # print(tokens)
-            print("* class doesn't exist **")
+            print("** class doesn't exist **")
             return False
         elif len(tokens) < 2:
             # print(tokens)
