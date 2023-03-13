@@ -38,6 +38,13 @@ Quit command to exit the program
 (hbnb) quit
 ```
 
+## DIRECTORIES
+
+DIRECTORIES | CONTENT
+____________|________
+
+[models](./models) | contains BaseModel  
+
 ## CONTRIBUTORS
 
 ## Al-Areef
