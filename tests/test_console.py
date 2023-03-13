@@ -91,6 +91,13 @@ class TestHBNBCommand(unittest.TestCase):
             s = '*** No help on emptyline\n'
             self.assertEqual(s, f.getvalue())
 
+    def test_help_default(self):
+        """default"""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help show")
+            s = '*** No help on emptyline\n'
+            self.assertEqual(s, f.getvalue())
+
 
 if __name__ == "__main__":
     unittest.main()
