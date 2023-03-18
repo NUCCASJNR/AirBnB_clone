@@ -1,0 +1,29 @@
+div.container {
+    max-inline-size: 1000px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+section.filters {
+    background-color: white;
+    block-size: 70px;
+    inline-size: 100%;
+    border: 1px #DDDDDD;
+    border-radius: 4px;
+}
+
+section.filters button {
+    background-color: #FF5A5F;
+    font-size: 18px;
+    color: #FFFFFF;
+    block-size: 48px;
+    inline-size: 20%;
+    border: 0;
+    border-radius: 4px;
+    float: inline-end;
+    margin: 11px 30px;
+} 
+
+section.filters button:hover {
+    opacity: .9;
+}
