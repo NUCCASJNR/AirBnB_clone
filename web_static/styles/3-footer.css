@@ -1,0 +1,10 @@
+footer {
+    background-color: white;
+    block-size: 60px;
+    inline-size: 100%;
+    position:absolute;
+    inset-block-end: 0;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
