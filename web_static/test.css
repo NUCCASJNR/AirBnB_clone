@@ -1,10 +1,27 @@
 p {
     color: blue;
+    background-color: black;
+    text-align: center;
+    padding: 15px;
 }
+
 h1 {
     color: green;
+    padding-block-start: 20px;
+    padding-inline-start: 20px;
+    padding-inline-end: 10px;
+    margin: 20px;
+    inline-size: 80%;
+    block-size: 20%;
+}
+h2 {
+    color:red;
+    display: inline-flexbox;
 }
 body {
     color: black;
     background-color: lightblue;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: start;
 }
