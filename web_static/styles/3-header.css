@@ -1,10 +1,9 @@
 header {
     background-color: white;
-    block-size: 70px;
-    inline-size: 100%;
-    border-block-end: 1px #CCCCCC;
-    /* same thing as border bottom */
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #CCCCCC;
     background-image: url(../images/logo.png);
     background-repeat: no-repeat;
-    background-position: 20px;
+    background-position: 20px 50%;
 }

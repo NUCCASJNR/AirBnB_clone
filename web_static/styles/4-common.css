@@ -5,9 +5,8 @@ body {
     font-size: 14px;
     font-family: Circular, "Helvetica Neue", Arial, sans-serif;
 }
-
 div.container {
-    max-inline-size: 1000px;
-    margin-block-start: 30px ;
-    margin-block-end: 30px;
+    max-width: 1000px;
+    margin: 30px auto;
+    /* text-align: center; */
 }
