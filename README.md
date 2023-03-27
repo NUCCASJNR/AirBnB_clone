@@ -81,5 +81,3 @@ DIRECTORIES | CONTENT
   <img src="https://contrib.rocks/image?repo=NUCCASJNR/AirBnB_clone" />
   </a>
 
-#  Made with [contrib.rocks](https://contrib.rocks).
-
