@@ -1,8 +1,10 @@
+/* search bar */
 div.container {
     max-width: 1000px;
     margin: 30px auto;
     text-align: center;
 }
+/* filters bar */
 section.filters {
     background-color: white;
     height: 70px;
@@ -22,5 +24,32 @@ section.filters button {
     margin: 11px 30px;
 }
 section.filters button:hover {
-    opacity: .9;
+    opacity: .78;
+}
+/* location and amenities part of search bar */
+.locations,
+.amenities {
+    height: 100%;
+    width: 25%;
+    float: left;
+}
+/* Location */
+.locations {
+    border-right: 1px solid #DDDDDD;
+}
+
+.locations h3,
+.ammenities h3 {
+    font-weight: 600;
+    /* font-size: 16px; */
+    padding: 5px;
+    margin: 0;
+}
+
+.locations h4,
+.amenities h4 {
+    font-weight: 600;
+    font-size: 14px;
+    padding: 10;
+    margin: 0;
 }
