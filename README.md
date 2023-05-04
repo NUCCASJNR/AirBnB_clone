@@ -13,7 +13,7 @@ The Project will start with console interpreter to perform some operations that 
 
 ### How to start
 
-run the following command to start
+Run the following command to start
 
 ```bash
 ./console.py
